@@ -1,5 +1,5 @@
 class ScrollPages {
-  constructor({ section, navigation = { item: true, color: '#ffffff' } }) {
+  constructor({ section, navigation = { item: true, color: '#ffffff', align: 'vertical', position: 'right' } }) {
     try {
       if (section === undefined) {
         console.error('Oops, maybe you forgot to mark the part that is needed :(')
@@ -19,9 +19,29 @@ class ScrollPages {
     sections[0].parentElement.classList.add('h-screen', 'overflow-hidden', 'relative')
     if (navigation.item === true) {
       const crtWrapperNavs = document.createElement('div')
-      crtWrapperNavs.classList.add('fixed', 'nav-container')
       const crtNavs = document.createElement('ul')
-      crtNavs.classList.add('navs', 'flex', 'flex-col', 'justify-center', 'items-center')
+      crtNavs.classList.add('navs', 'flex', 'justify-center', 'items-center')
+      if (navigation.align === 'vertical') {
+        crtNavs.classList.add('flex-col')
+      } else if (navigation.align === 'horizontal') {
+        crtNavs.classList.add('flex-row')
+      } else {
+        navigation.align = 'vertical'
+        crtNavs.classList.add('flex-col')
+      }
+      if (navigation.position === 'right'
+          || navigation.position === 'bottom'
+          || navigation.position === 'left'
+          || navigation.position === 'top'
+          || navigation.position === 'top-right' 
+          || navigation.position === 'bottom-right'
+          || navigation.position === 'top-left'
+          || navigation.position === 'bottom-left'
+      ) {
+        crtWrapperNavs.classList.add('fixed', `nav-${navigation.align}-${navigation.position}`)
+      } else {
+        crtWrapperNavs.classList.add('fixed', `nav-${navigation.align}-right`)
+      }
       crtWrapperNavs.append(crtNavs)
       sections[0].parentElement.append(crtWrapperNavs)
       sections.forEach(() => {
