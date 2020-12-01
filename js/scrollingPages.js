@@ -1,5 +1,5 @@
 class ScrollPages {
-  constructor({ section, navigation = true }) {
+  constructor({ section, navigation = { item: true, color: '#ffffff' } }) {
     try {
       if (section === undefined) {
         console.error('Oops, maybe you forgot to mark the part that is needed :(')
@@ -13,8 +13,11 @@ class ScrollPages {
   scrollView(section, navigation) {
     let eLto = 0
     const sections = document.querySelectorAll(section)
+    sections.forEach(e => {
+      e.classList.add('w-full', 'h-screen')
+    })
     sections[0].parentElement.classList.add('h-screen', 'overflow-hidden')
-    if (navigation === true) {
+    if (navigation.item === true) {
       const crtWrapperNavs = document.createElement('div')
       crtWrapperNavs.classList.add('fixed', 'nav-container')
       const crtNavs = document.createElement('ul')
@@ -28,6 +31,7 @@ class ScrollPages {
       const navItem = document.querySelectorAll('.nav-item')
       navItem[eLto].classList.add('active')
       navItem.forEach((e, i) => {
+        e.setAttribute('style', `background-color: ${navigation.color}`)
         e.addEventListener('click', function() {
           navItem[eLto].classList.remove('active')
           sections[i].scrollIntoView({
@@ -64,7 +68,7 @@ class ScrollPages {
           }
         }
       }, { passive: false })
-    } else if (navigation === false || navigation === undefined) {
+    } else if (navigation.item === false || navigation.item === undefined) {
       document.querySelector('html, body').addEventListener('wheel', wheel => {
         wheel.preventDefault()
         let wheelY = Math.floor(wheel.deltaY)
