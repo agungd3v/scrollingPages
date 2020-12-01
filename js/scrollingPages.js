@@ -16,7 +16,7 @@ class ScrollPages {
     sections.forEach(e => {
       e.classList.add('w-full', 'h-screen')
     })
-    sections[0].parentElement.classList.add('h-screen', 'overflow-hidden')
+    sections[0].parentElement.classList.add('h-screen', 'overflow-hidden', 'relative')
     if (navigation.item === true) {
       const crtWrapperNavs = document.createElement('div')
       crtWrapperNavs.classList.add('fixed', 'nav-container')
