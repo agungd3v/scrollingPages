@@ -4,7 +4,7 @@ scrollingPages is a Javascript library for to make it easier for you to create w
 
 ## Installation
 
-clone this repository and paste the js file in the js folder
+clone this repository and paste codes below
 
 ```bash
 <link rel="stylesheet" href="./scrollPages/css/scrollingPages.css">
@@ -40,11 +40,11 @@ new ScrollPages({
 })
 ```
 
-Basically it will fill up the page and provide navigation on the right in white.
+Basically it will fill up the page and provide navigation on the right in white
 
 ## Customize
 
-You can modify some parts based on the available objects below.
+You can modify some parts based on the available objects below
 
 | Object | Type | default |
 | ------ | ------ | ------ |
