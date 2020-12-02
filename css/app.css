@@ -125,8 +125,6 @@ ul {
 }
 
 .nav-item {
-    width: 6px;
-    height: 6px;
     transform: scale(1);
     transition: transform .2s ease-in-out;
 }

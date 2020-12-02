@@ -1,5 +1,5 @@
 class ScrollPages {
-  constructor({ section, navigation = { item: true, color: '#ffffff', direction: { align: 'vertical', position: 'right' } } }) {
+  constructor({ section, navigation = { item: true, color: '#ffffff', direction: { align: 'vertical', position: 'right' }, size: 6 } }) {
     try {
       if (section === undefined) {
         console.error('Oops, maybe you forgot to mark the part that is needed :(')
@@ -22,7 +22,7 @@ class ScrollPages {
       const crtNavs = document.createElement('ul')
       crtNavs.classList.add('navs', 'flex', 'justify-center', 'items-center')
       if (navigation.direction === undefined) {
-        crtWrapperNavs.classList.add('nav-vertical-right')
+        crtWrapperNavs.classList.add('fixed', 'nav-vertical-right')
         crtNavs.classList.add('flex-col')
       } else {
         if (navigation.direction.align === 'vertical') {
@@ -56,7 +56,18 @@ class ScrollPages {
       const navItem = document.querySelectorAll('.nav-item')
       navItem[eLto].classList.add('active')
       navItem.forEach((e, i) => {
-        e.setAttribute('style', `background-color: ${navigation.color}`)
+        if (navigation.color.split('')[0].toString() !== '#') {
+          e.style.backgroundColor = '#ffffff'
+        } else {
+          e.style.backgroundColor = navigation.color
+        }
+        if (!Number.isInteger(navigation.size)) {
+          e.style.width = 6 + 'px'
+          e.style.height = 6 + 'px'
+        } else {
+          e.style.width = navigation.size + 'px'
+          e.style.height = navigation.size + 'px'
+        }
         e.addEventListener('click', function() {
           navItem[eLto].classList.remove('active')
           sections[i].scrollIntoView({
