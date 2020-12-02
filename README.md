@@ -41,7 +41,7 @@ new ScrollPages({
 
 Basically it will fill up the page and provide navigation on the right in white.
 
-### Customize
+## Customize
 
 You can modify some parts based on the available objects below.
 
