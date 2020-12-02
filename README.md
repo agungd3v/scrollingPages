@@ -48,8 +48,8 @@ You can modify some parts based on the available objects below.
 | Object | Type | default | child |
 | ------ | ------ | ------ | ------ |
 | section | string | false | none |
-| navigation | object | true | object | string |
-|  |  |  |  |
+| navigation | object | true | | object | string | |
+|  |  |  | | item | boolean | |
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
