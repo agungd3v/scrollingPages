@@ -45,11 +45,10 @@ Basically it will fill up the page and provide navigation on the right in white.
 
 You can modify some parts based on the available objects below.
 
-| Object | Type | default | child |
-| ------ | ------ | ------ | ------ |
-| section | string | false | none |
-| navigation | object | true | | object | string | |
-|  |  |  | | item | boolean | |
+| Object | Type | default |
+| ------ | ------ | ------ |
+| section | string | false |
+| navigation | object | true |
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
