@@ -84,7 +84,11 @@ class ScrollPages {
       const navItem = document.querySelectorAll('.nav-item')
       navItem[eLto].classList.add('active')
       navItem.forEach((e, i) => {
-        navigation.color.split('')[0].toString() !== '#' ? e.style.backgroundColor = '#ffffff' : e.style.backgroundColor = navigation.color
+        if (navigation.color !== undefined) {
+          navigation.color.split('')[0].toString() !== '#' ? e.style.backgroundColor = '#ffffff' : e.style.backgroundColor = navigation.color
+        } else {
+          e.style.backgroundColor = '#ffffff'
+        }
         if (!Number.isInteger(navigation.size)) {
           e.style.width = 6 + 'px'
           e.style.height = 6 + 'px'
