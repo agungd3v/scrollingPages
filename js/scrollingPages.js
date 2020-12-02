@@ -1,22 +1,50 @@
 class ScrollPages {
-  constructor({ section, navigation = { item: true, color: '#ffffff', direction: { align: 'vertical', position: 'right' }, size: 6 } }) {
+  constructor({
+    section,
+    navigation = {
+      item: true,
+      color: '#ffffff',
+      direction: {
+        align: 'vertical',
+        position: 'right'
+      },
+      size: 6
+    },
+    scrolling = 'vertical'
+  }) {
     try {
       if (section === undefined) {
         console.error('Oops, maybe you forgot to mark the part that is needed :(')
         return false
       }
-      this.scrollView(section, navigation)
+      this.scrollView(section, navigation, scrolling)
     } catch (error) {
       console.error(error)
     }
   }
-  scrollView(section, navigation) {
+  scrollView(section, navigation, scrolling) {
     let eLto = 0
     const sections = document.querySelectorAll(section)
     sections.forEach(e => {
       e.classList.add('w-full', 'h-screen')
     })
     sections[0].parentElement.classList.add('h-screen', 'overflow-hidden', 'relative')
+    if (scrolling === 'horizontal') {
+      sections[0].parentElement.style.display = 'flex'
+      sections.forEach(e => {
+        e.style.flexShrink = '0'
+      })
+    } else if (scrolling === 'vertical') {
+      sections[0].parentElement.style.removeProperty('display')
+      sections.forEach(e => {
+        e.style.removeProperty('flexShrink')
+      })
+    } else {
+      sections[0].parentElement.style.removeProperty('display')
+      sections.forEach(e => {
+        e.style.removeProperty('flexShrink')
+      })
+    }
     if (navigation.item === true) {
       const crtWrapperNavs = document.createElement('div')
       const crtNavs = document.createElement('ul')
