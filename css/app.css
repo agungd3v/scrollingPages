@@ -82,14 +82,14 @@ ul {
 
 .nav-horizontal-bottom-right {
     bottom: 1.5rem;
-    left: 92%;
-    transform: translateZ(-50%);
+    right: 0.5%;
+    transform: translateX(-50%);
 }
 
 .nav-horizontal-bottom-left {
     bottom: 1.5rem;
-    left: 2%;
-    transform: translateZ(-50%);
+    left: 5%;
+    transform: translateX(-50%);
 }
 
 .nav-vertical-left {
@@ -118,14 +118,14 @@ ul {
 
 .nav-horizontal-top-right {
   top: 1.5rem;
-  left: 92%;
-  transform: translateZ(-50%);
+  right: 0.5%;
+  transform: translateX(-50%);
 }
 
 .nav-horizontal-top-left {
   top: 1.5rem;
-  left: 2%;
-  transform: translateZ(-50%);
+  left: 5%;
+  transform: translateX(-50%);
 }
 
 .navs>li {

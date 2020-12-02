@@ -1,5 +1,5 @@
 class ScrollPages {
-  constructor({ section, navigation = { item: true, color: '#ffffff', align: 'vertical', position: 'right' } }) {
+  constructor({ section, navigation = { item: true, color: '#ffffff', direction: { align: 'vertical', position: 'right' } } }) {
     try {
       if (section === undefined) {
         console.error('Oops, maybe you forgot to mark the part that is needed :(')
@@ -21,26 +21,31 @@ class ScrollPages {
       const crtWrapperNavs = document.createElement('div')
       const crtNavs = document.createElement('ul')
       crtNavs.classList.add('navs', 'flex', 'justify-center', 'items-center')
-      if (navigation.align === 'vertical') {
+      if (navigation.direction === undefined) {
+        crtWrapperNavs.classList.add('nav-vertical-right')
         crtNavs.classList.add('flex-col')
-      } else if (navigation.align === 'horizontal') {
-        crtNavs.classList.add('flex-row')
       } else {
-        navigation.align = 'vertical'
-        crtNavs.classList.add('flex-col')
-      }
-      if (navigation.position === 'right'
-          || navigation.position === 'bottom'
-          || navigation.position === 'left'
-          || navigation.position === 'top'
-          || navigation.position === 'top-right' 
-          || navigation.position === 'bottom-right'
-          || navigation.position === 'top-left'
-          || navigation.position === 'bottom-left'
-      ) {
-        crtWrapperNavs.classList.add('fixed', `nav-${navigation.align}-${navigation.position}`)
-      } else {
-        crtWrapperNavs.classList.add('fixed', `nav-${navigation.align}-right`)
+        if (navigation.direction.align === 'vertical') {
+          crtNavs.classList.add('flex-col')
+        } else if (navigation.direction.align === 'horizontal') {
+          crtNavs.classList.add('flex-row')
+        } else {
+          navigation.direction.align = 'vertical'
+          crtNavs.classList.add('flex-col')
+        }
+        if (navigation.direction.position === 'right'
+            || navigation.direction.position === 'bottom'
+            || navigation.direction.position === 'left'
+            || navigation.direction.position === 'top'
+            || navigation.direction.position === 'top-right' 
+            || navigation.direction.position === 'bottom-right'
+            || navigation.direction.position === 'top-left'
+            || navigation.direction.position === 'bottom-left'
+        ) {
+          crtWrapperNavs.classList.add('fixed', `nav-${navigation.direction.align}-${navigation.direction.position}`)
+        } else {
+          crtWrapperNavs.classList.add('fixed', `nav-${navigation.direction.align}-right`)
+        }
       }
       crtWrapperNavs.append(crtNavs)
       sections[0].parentElement.append(crtWrapperNavs)
