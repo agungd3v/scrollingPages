@@ -64,14 +64,12 @@ ul {
 
 .nav-vertical-top-right {
     right: 1.5rem;
-    top: 15%;
-    transform: translateY(-50%);
+    top: 1.5rem;
 }
 
 .nav-vertical-bottom-right {
     right: 1.5rem;
-    top: 85%;
-    transform: translateY(-50%);
+    bottom: 1.5rem;
 }
 
 .nav-horizontal-bottom {
@@ -82,14 +80,12 @@ ul {
 
 .nav-horizontal-bottom-right {
     bottom: 1.5rem;
-    right: 0.5%;
-    transform: translateX(-50%);
+    right: 1.5rem;
 }
 
 .nav-horizontal-bottom-left {
     bottom: 1.5rem;
-    left: 5%;
-    transform: translateX(-50%);
+    left: 1.5rem;
 }
 
 .nav-vertical-left {
@@ -100,14 +96,12 @@ ul {
 
 .nav-vertical-top-left {
     left: 1.5rem;
-    top: 15%;
-    transform: translateY(-50%);
+    top: 1.5rem;
 }
 
 .nav-vertical-bottom-left {
     left: 1.5rem;
-    top: 85%;
-    transform: translateY(-50%);
+    bottom: 1.5rem;
 }
 
 .nav-horizontal-top {
@@ -118,14 +112,12 @@ ul {
 
 .nav-horizontal-top-right {
   top: 1.5rem;
-  right: 0.5%;
-  transform: translateX(-50%);
+  right: 1.5rem;
 }
 
 .nav-horizontal-top-left {
   top: 1.5rem;
-  left: 5%;
-  transform: translateX(-50%);
+  left: 1.5rem;
 }
 
 .navs>li {
