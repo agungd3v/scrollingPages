@@ -7,6 +7,7 @@ scrollingPages is a Javascript library for to make it easier for you to create w
 clone this repository and paste the js file in the js folder
 
 ```bash
+<link rel="stylesheet" href="./scrollPages/css/scrollingPages.css">
 <script src="./scrollingPages/js/scrollingPages.js"></script>
 ```
 
@@ -56,6 +57,7 @@ You can modify some parts based on the available objects below.
 | align | string | true |
 | position | string | true |
 | size | integer | true |
+| scrolling | string | true |
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
