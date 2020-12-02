@@ -49,6 +49,14 @@ You can modify some parts based on the available objects below.
 | ------ | ------ | ------ |
 | section | string | false |
 | navigation | object | true |
+| item | boolean | true |
+| color | string | true |
+| item | boolean | true |
+| direction | object | true |
+| align | string | true |
+| position | string | true |
+| size | integer | true |
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
